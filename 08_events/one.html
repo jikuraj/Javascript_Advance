@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html events</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+    /*Note
+    .in Javascript all the events run in sequence(sequencly)
+    .javascript run sequencely
+    #Event propogation   inner to outside called event propogation
+    Their are two context of event propogation
+    1.event bubling    .. by default it is false
+    2.event capturing    when third parameter is true
+    
+    */
+//    document.querySelector('#owl').onclick=()=>{
+//     alert('owl clicked')  // basic method
+//    }
+
+    // attachEvent()
+    // jQuery - on
+
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget,
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+
+//best method
+
+// document.querySelector('#owl').addEventListener('click',(e)=>{
+//       console.log('owl clicked');
+//     //   e.stopPropagation();      
+// },false)
+// document.querySelector('#images').addEventListener('click',(e)=>{
+//       console.log('ul clicked !'); 
+//     //   e.stopPropagation();
+// },false)
+// document.querySelector('#google').addEventListener('click',(e)=>{
+//       console.log('google clicked'); 
+//       e.preventDefault()
+//      e.stopPropagation();
+// },false)
+
+const removeImg=document.querySelectorAll('ul')
+removeImg.forEach((img)=>{
+    console.log(img);
+  img.addEventListener('click',(e)=>{
+    console.log(e.target.tagName);
+    if(e.target.tagName==='IMG'){
+
+        let rmv=e.target.parentNode
+        rmv.remove()
+    }
+  })
+})
+</script>
+</html>

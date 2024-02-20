@@ -1,0 +1,102 @@
+/*
+----document.getElementById('title')-----
+result
+<h1 id="title" class="heading">First page </h1>
+const elebyid=document.getElementById('title')
+elebyid.style.color='red'
+elebyid.innerHTML  //result First page   it give all the html content of id title
+elebyid.innerText //result First page    it give only text content
+elebyid.textContent //result First page  it give the entire text content of id title
+*/
+
+/*
+-----document.getElementByClassName-------
+const liItem=document.getElementsByClassName('list-item') //it return the value in HTMLCollection
+
+console.log(liItem) //after log
+HTMLCollection(4) [li.list-item, li.list-item, li.list-item, li.list-item]
+
+liItem.style.color='red'
+VM2399:1 Uncaught TypeError: Cannot set properties of undefined (setting 'color')
+
+liItem[1].style.color='red'
+'red'
+
+const arr=Array.from(liItem)
+
+console.log(arr)
+result(4) [li.list-item, li.list-item, li.list-item, li.list-item]
+
+    arr.forEach((li)=>(
+        li.style.backgroundColor='green'
+    ))
+
+liItem[0].innerHTML
+'one'
+liItem[0].innerText
+'one'
+liItem[0].textContent
+'one'
+*/
+
+/*
+----------document.querySelector()--------------
+.it return the first element of the body
+
+const qItem=document.querySelector('ul')
+
+console.log(qItem)
+result:-<ul>​<li class=​"list-item">​…​</li>
+​<li class=​"list-item">​…​</li>​<li class=​"list-item">​…​</li>​<li class=​"list-item">​…​</li>​</ul>​
+
+const litem=qItem.querySelector('li')
+
+console.log(litem)
+<li class=​"list-item">​…​</li>​::marker​"one"</li>​
+
+const qSelectorById=document.querySelector('#title')
+
+console.log(qSelectorById)
+<h1 id=​"title" class=​"heading">​First page ​</h1>​
+
+const qSelectorByClass=document.querySelector('.list-item')
+
+console.log(qSelectorByClass)
+<li class=​"list-item">​…​</li>​::marker​"one"</li>​
+
+
+const qSelectorByAtribute=document.querySelector('input[type="password"]')
+
+console.log(qSelectorByAtribute)
+<input type=​"password">​
+*/
+
+/*
+-----------document.querySelectorAll()---------
+.it reurtn all the element of body and retrun nodeList
+
+const qAll=document.querySelectorAll('h2')
+
+console.log(qAll)
+NodeList(3) [h2, h2, h2]0: h21: h22: h2length: 3[[Prototype]]:
+NodeListentries: ƒ entries()forEach: ƒ forEach()item: ƒ item()keys: ƒ keys()length: (...)values: ƒ values()constructor: ƒ NodeList()Symbol(Symbol.iterator): ƒ values()Symbol(Symbol.toStringTag): "NodeList"get length: ƒ length()[[Prototype]]: Object
+
+
+qAll.style.color='red'
+VM3686:1 Uncaught TypeError: Cannot set properties of undefined (setting 'color')
+    at <anonymous>:1:17
+(anonymous) @ VM3686:1
+
+
+qAll[1].style.color='red'
+'red'
+
+
+qAll.forEach((h)=>(
+    h.style.backgroundColor='orange'
+))
+
+document.querySelectorAll('.list-item')  by class
+document.querySelectorAll('#title')  by id
+NodeList(4) [
+*/

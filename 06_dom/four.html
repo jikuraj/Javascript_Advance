@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+    
+</body>
+<script>
+    //non optimized
+    const language=(langName)=>{
+        const li=document.createElement('li')
+        li.innerHTML=`${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    language('python')
+
+//ooptimizd
+    const optiLanguage=(LangName)=>{
+        const li=document.createElement('li')
+        li.appendChild(document.createTextNode(`${LangName}`))
+        document.querySelector('.language').appendChild(li)
+    }
+    optiLanguage("java")    
+
+//edit
+    const secondLang=document.querySelector('li:nth-child(2)')
+    // secondLang.innerHTML='nodejs'
+    const li=document.createElement('li')
+    li.appendChild(document.createTextNode("nodejs"))
+    secondLang.replaceWith(li)
+    console.log(secondLang);
+
+//edit one more method
+ const firstlang=document.querySelector('li:first-child')
+ firstlang.outerHTML='<li>Typescript</li>'
+
+ //remove
+ const midLang=document.querySelector('li:nth-child(2)')
+ midLang.remove()
+
+</script>
+</html

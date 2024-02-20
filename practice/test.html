@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="heading">Color change</h1>
+    <button id="green">green</button>
+    <button id="red">red</button>
+</body>
+<script>
+   function  colorChange(color){
+         return function(){
+            document.body.style.backgroundColor=`${color}`
+         }
+        //  return setColor;
+   }
+
+   document.querySelector('#green').addEventListener('click',
+    colorChange('green')
+   )
+   document.querySelector('#red').addEventListener('click',
+    colorChange('red')
+   )
+</script>
+</html>

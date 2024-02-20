@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jiku</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    const div=document.querySelector('.parent')
+    console.log(div);
+    console.log(div.children);
+    for(let i=0; i<div.children.length; i++){
+        console.log(div.children[i].innerText);
+    }
+    div.children[0].style.color='red'
+    console.log(div.firstElementChild);
+    console.log(div.lastElementChild);
+
+    const child=document.querySelector('.day')
+    console.log(child);
+    console.log(child.parentElement);
+    console.log(child.nextElementSibling);
+
+    console.log('nodes: ',div.childNodes);
+</script>
+</html>
